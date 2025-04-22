@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.8125rem;
+  background-color: hsl(210, 46%, 95%);
+  justify-content: space-between;
+}
+.app .card {
+  margin: 4.6875rem auto 0;
+  flex: 1;
+  width: 20.5rem;
+  max-height: 32.0625rem;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.app .card .pic {
+  height: 12.5rem;
+  width: 100%;
+  overflow: hidden;
+}
+.app .card .pic img {
+  width: 100%;
+}
+.app .card .content {
+  padding: 2.25rem 2.125rem 0;
+}
+.app .card .content h2 {
+  color: hsl(217, 19%, 35%);
+  font-size: 1rem;
+  line-height: 1.7rem;
+}
+.app .card .content article {
+  margin: 0.5rem 0 1.3125rem;
+  color: hsl(214, 17%, 51%);
+  line-height: 1.25rem;
+  letter-spacing: 0.5px;
+  font-weight: 400;
+}
+.app .card .content .info {
+  display: flex;
+  align-items: center;
+  margin-top: 1.25rem;
+}
+.app .card .content .info .propic {
+  width: 2.625rem;
+}
+.app .card .content .info .propic img {
+  width: 100%;
+  border-radius: 50%;
+}
+.app .card .content .info .msg {
+  flex: 1;
+  margin-left: 1.125rem;
+}
+.app .card .content .info .msg .name {
+  font-weight: 700;
+  color: hsl(217, 19%, 35%);
+}
+.app .card .content .info .msg .date {
+  color: hsl(212, 23%, 69%);
+}
+.app .card .content .info a {
+  display: block;
+  width: 2.0625rem;
+  height: 2.0625rem;
+  background: url(../assets/icon-share.svg) no-repeat center center hsl(210, 46%, 95%);
+  border-radius: 50%;
+}
+.app .card .share {
+  background-color: hsl(217, 19%, 35%);
+  height: 4.0625rem;
+  color: white;
+  display: flex;
+  padding: 0 2.125rem;
+  align-items: center;
+  margin-top: 21px;
+}
+.app .card .share p {
+  width: 4rem;
+  letter-spacing: 0.35rem;
+  color: hsl(212, 23%, 69%);
+}
+.app .card .share .btn {
+  display: flex;
+  width: 6.937rem;
+  margin-left: 1.375rem;
+}
+.app .card .share .btn .icon {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.app .card .share .noshare {
+  margin-left: 1.875rem;
+  width: 2.0625rem;
+  height: 2.0625rem;
+}
+.app .card .share .noshare a {
+  display: block;
+  width: 2.0625rem;
+  height: 2.0625rem;
+  background: url(../assets/icon-share.svg) no-repeat center center hsl(210, 46%, 95%);
+  border-radius: 50%;
+}
+.app .card .share .move {
+  transform: translateY(-4.0625rem);
+  transition: all 0.5s;
+}
+.app .attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.app .attribution a {
+  color: hsl(228, 45%, 44%);
+}
