@@ -16,7 +16,7 @@
           to help you make any room feel complete.
         </article>
 
-        <div class="info" v-show="isvisible1">
+        <div class="info">
           <div class="propic">
             <img src="./assets/avatar-michelle.jpg" alt="">
           </div>
@@ -34,7 +34,7 @@
           </div>
         </div>
       </div>
-      <div class="share" :class="{move: ismove}">
+      <div class="share" :class="{ismove: ismove}" v-show="isvisible">
         <p>SHARE</p>
         <div class="btn">
           <div class="icon">
@@ -63,13 +63,14 @@
 export default {
   data () {
     return {
-      isvisible1: false,
+      isvisible: false,
       ismove: false
     }
   },
   methods: {
     isShow () {
       this.ismove = !this.ismove
+      this.isvisible = !this.isvisible
     }
   }
 }

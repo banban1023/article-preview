@@ -21,7 +21,7 @@
   justify-content: space-between;
   .card {
     margin: 4.6875rem auto 0;
-    flex: 1;
+    height: 513px;
     width: 20.5rem;
     max-height: 32.0625rem;
     background-color: #fff;
@@ -33,6 +33,7 @@
       overflow: hidden;
       img {
         width: 100%;
+        object-fit: cover;
       }
     }
     .content {
@@ -81,6 +82,9 @@
       }
 
     }
+    .ismove {
+      animation: open 0.2s linear forwards;
+    }
     .share {
       background-color: @very-dark-grayish-blue;
       height: 4.0625rem;
@@ -116,10 +120,6 @@
           border-radius: 50%;
         }
       }
-      .move {
-        transform: translateY(-4.0625rem);
-        transition: all 0.5s
-      }
     }
   }
   .attribution {
@@ -129,4 +129,56 @@
     }
   }
 }
+@keyframes open {
+  from {transform: translateY(0); }
+  to {transform: translateY(-4.062rem);}
+}
 
+@media (min-width:768px) {
+  .app {
+    .card {
+      width: 731px;
+      height: 280px;
+      display: flex;
+      flex-direction: row;
+      margin-top: 260px;
+      position: relative;
+      overflow: visible;
+      .pic {
+        height: 100%;
+        img {
+          height: 100%;
+          object-fit: cover;
+          border-radius: 10px 0 0 10px;
+        }
+      }
+      .content {
+        height: 100%;
+        h2 {
+          font-size: 22px;
+        }
+      }
+      .share {
+        position: absolute;
+        left: 550px;
+        top: 168px;
+        border-radius: 10px;
+        .noshare {
+          display: none;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          top: 72px;
+          right: 119px;
+          width: 0;
+          height: 0;
+          border-left: 15px solid transparent;
+          border-right: 15px solid transparent;
+          border-top: 15px solid @very-dark-grayish-blue;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+}

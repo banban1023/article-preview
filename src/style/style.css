@@ -15,7 +15,7 @@
 }
 .app .card {
   margin: 4.6875rem auto 0;
-  flex: 1;
+  height: 513px;
   width: 20.5rem;
   max-height: 32.0625rem;
   background-color: #fff;
@@ -29,6 +29,7 @@
 }
 .app .card .pic img {
   width: 100%;
+  object-fit: cover;
 }
 .app .card .content {
   padding: 2.25rem 2.125rem 0;
@@ -75,6 +76,9 @@
   background: url(../assets/icon-share.svg) no-repeat center center hsl(210, 46%, 95%);
   border-radius: 50%;
 }
+.app .card .ismove {
+  animation: open 0.2s linear forwards;
+}
 .app .card .share {
   background-color: hsl(217, 19%, 35%);
   height: 4.0625rem;
@@ -111,14 +115,64 @@
   background: url(../assets/icon-share.svg) no-repeat center center hsl(210, 46%, 95%);
   border-radius: 50%;
 }
-.app .card .share .move {
-  transform: translateY(-4.0625rem);
-  transition: all 0.5s;
-}
 .app .attribution {
   font-size: 11px;
   text-align: center;
 }
 .app .attribution a {
   color: hsl(228, 45%, 44%);
+}
+@keyframes open {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-4.062rem);
+  }
+}
+@media (min-width: 768px) {
+  .app .card {
+    width: 731px;
+    height: 280px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 260px;
+    position: relative;
+    overflow: visible;
+  }
+  .app .card .pic {
+    height: 100%;
+  }
+  .app .card .pic img {
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px 0 0 10px;
+  }
+  .app .card .content {
+    height: 100%;
+  }
+  .app .card .content h2 {
+    font-size: 22px;
+  }
+  .app .card .share {
+    position: absolute;
+    left: 550px;
+    top: 168px;
+    border-radius: 10px;
+  }
+  .app .card .share .noshare {
+    display: none;
+  }
+  .app .card .share::after {
+    content: "";
+    position: absolute;
+    top: 72px;
+    right: 119px;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid hsl(217, 19%, 35%);
+    transform: translateY(-50%);
+  }
 }
